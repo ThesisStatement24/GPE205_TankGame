@@ -13,6 +13,10 @@ public class TankMover : MonoBehaviour
     {
 
         cc = GetComponent<CharacterController>();
+
+        cc.slopeLimit = 90;
+        cc.stepOffset = 0.0f;
+
         Data = GetComponent<TankData>();
         
     }
