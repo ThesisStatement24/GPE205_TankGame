@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private TankMover mover;
+    public TankMover mover;
     public enum ControlType { WASD, ArrowKeys };
     public ControlType controlType;
 
@@ -32,22 +32,22 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.A))
             {
-                //Move Backward (-)
-
+                //Rotate CounterClockwise (-)
+                mover.Rotate(false);
 
             }
 
             if (Input.GetKey(KeyCode.S))
             {
-                //Rotate CounterClockwise (-)
-
+                //Move Backward (-)
+                mover.Move(false);
 
             }
 
             if (Input.GetKey(KeyCode.D))
             {
                 //Rotate Clockwise (+)
-
+                mover.Rotate(true);
 
             }
 
@@ -57,6 +57,34 @@ public class PlayerController : MonoBehaviour
 
         if (controlType == ControlType.ArrowKeys)
         {
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                //Move Forward (+)
+                mover.Move(true);
+
+            }
+
+            if (Input.GetKey(KeyCode.A))
+            {
+                //Move Backward (-)
+                mover.Move(false);
+
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                //Rotate CounterClockwise (-)
+                mover.Rotate(false);
+
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                //Rotate Clockwise (+)
+                mover.Rotate(true);
+
+            }
 
 
         }

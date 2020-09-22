@@ -18,7 +18,7 @@ public class TankMover : MonoBehaviour
     }
 
 
-    public void MoveForward (bool isForward)
+    public void Move (bool isForward)
     {
 
         if (isForward)
@@ -46,7 +46,7 @@ public class TankMover : MonoBehaviour
         else
         {
 
-            transform.Rotate(new Vector3(0, Data.rotateSpeed * Time.deltaTime, 0));
+            transform.Rotate(new Vector3(0, -Data.rotateSpeed * Time.deltaTime, 0));
 
         }
 
