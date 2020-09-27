@@ -7,6 +7,7 @@ public class TankMover : MonoBehaviour
 
     private CharacterController cc;
     private TankData Data;
+    private Bullet RBbullet;
 
     // Start is called before the first frame update
     void Start()
@@ -21,20 +22,19 @@ public class TankMover : MonoBehaviour
         
     }
 
-
-    public void Move (bool isForward)
+    void Update()
     {
 
-        if (isForward)
-        {
+        Data.shootDelay -= Time.deltaTime;
+        
 
-            cc.SimpleMove(transform.forward * Data.speed);
+    }
 
-        } else {
 
-            cc.SimpleMove(-transform.forward * Data.speed);
+        public void Move (Vector3 direction)
+    {
 
-        }
+            cc.SimpleMove(direction * Data.speed);
 
     }
 
@@ -54,6 +54,20 @@ public class TankMover : MonoBehaviour
 
         }
 
+
+    }
+
+    public void Shoot()
+    {
+        
+        if(Data.shootDelay <= 0)
+        {
+
+            Data.shootDelay = Data.fireRate;
+            Instantiate(Data.Bullet , Data.Gun1.position, Data.Gun1.rotation); // Create a new bullet
+            
+        }
+        
 
     }
 }

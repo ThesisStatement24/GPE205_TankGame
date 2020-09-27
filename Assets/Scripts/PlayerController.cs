@@ -1,11 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public TankMover mover;
-    public enum ControlType { WASD, ArrowKeys };
+    public TankData data;
+    public enum ControlType { WASD, ArrowKeys, Controller1, Controller2 };
     public ControlType controlType;
 
     // Start is called before the first frame update
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 directionToMove = Vector3.zero;
 
         if(controlType == ControlType.WASD)
         {
@@ -26,68 +28,113 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 //Move Forward (+)
-                mover.Move(true);
+                directionToMove = data.transform.forward;
 
             }
 
             if (Input.GetKey(KeyCode.A))
             {
                 //Rotate CounterClockwise (-)
-                mover.Rotate(false);
+               data.mover.Rotate(false);
 
             }
 
             if (Input.GetKey(KeyCode.S))
             {
                 //Move Backward (-)
-                mover.Move(false);
-
+                directionToMove = -data.transform.forward;
             }
 
             if (Input.GetKey(KeyCode.D))
             {
                 //Rotate Clockwise (+)
-                mover.Rotate(true);
+                data.mover.Rotate(true);
 
             }
 
-            
+            if (Input.GetKey(KeyCode.Space))
+            {
+
+                data.mover.Shoot();
+
+            }
+
+            data.mover.Move(directionToMove);
 
         }
 
         if (controlType == ControlType.ArrowKeys)
         {
 
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKey(KeyCode.UpArrow))
             {
                 //Move Forward (+)
-                mover.Move(true);
+                directionToMove = data.transform.forward;
 
             }
 
-            if (Input.GetKey(KeyCode.A))
-            {
-                //Move Backward (-)
-                mover.Move(false);
-
-            }
-
-            if (Input.GetKey(KeyCode.S))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 //Rotate CounterClockwise (-)
-                mover.Rotate(false);
+                data.mover.Rotate(false);
 
             }
 
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                //Move Backward (-)
+                directionToMove = -data.transform.forward;
+            }
+
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 //Rotate Clockwise (+)
-                mover.Rotate(true);
+                data.mover.Rotate(true);
 
             }
 
-
+            data.mover.Move(directionToMove);
         }
 
+        if (controlType == ControlType.Controller1)
+            {
+
+            if (Input.GetAxis("Vertical") > 0.5)
+            {
+                //Move Forward (+)
+                directionToMove = data.transform.forward;
+
+            }
+
+            if (Input.GetAxis("Horizontal") < -0.5)
+            {
+                //Rotate CounterClockwise (-)
+                data.mover.Rotate(false);
+
+            }
+
+            if (Input.GetAxis("Vertical") < -0.5)
+            {
+                //Move Backward (-)
+                directionToMove = -data.transform.forward;
+            }
+
+            if (Input.GetAxis("Horizontal") > 0.5)
+            {
+                //Rotate Clockwise (+)
+                data.mover.Rotate(true);
+
+            }
+
+            if (Input.GetAxis("Fire1") > 0.5)
+            {
+
+                UnityEngine.Debug.Log("Firing Cannon");
+
+            }
+
+            data.mover.Move(directionToMove);
+
+        }
     }
 }
