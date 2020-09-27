@@ -22,7 +22,7 @@ public class TankMover : MonoBehaviour
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         Data.shootDelay -= Time.deltaTime;

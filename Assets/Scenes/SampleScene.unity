@@ -1061,7 +1061,7 @@ PrefabInstance:
     - target: {fileID: 7572101312031078502, guid: cb8a94afdac79574b996d0ff284c3d94,
         type: 3}
       propertyPath: fireRate
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8a94afdac79574b996d0ff284c3d94, type: 3}
@@ -1754,7 +1754,7 @@ GameObject:
   - component: {fileID: 1588188316}
   - component: {fileID: 1588188315}
   m_Layer: 0
-  m_Name: PlayerOne (1)
+  m_Name: PlayerTwo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2129,7 +2129,7 @@ PrefabInstance:
     - target: {fileID: 7572101312031078502, guid: cb8a94afdac79574b996d0ff284c3d94,
         type: 3}
       propertyPath: fireRate
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb8a94afdac79574b996d0ff284c3d94, type: 3}

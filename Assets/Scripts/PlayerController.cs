@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space))
             {
-
+                UnityEngine.Debug.Log("Firing Cannon");
                 data.mover.Shoot();
 
             }
@@ -90,6 +90,13 @@ public class PlayerController : MonoBehaviour
             {
                 //Rotate Clockwise (+)
                 data.mover.Rotate(true);
+
+            }
+
+            if (Input.GetKey(KeyCode.L))
+            {
+                UnityEngine.Debug.Log("Firing Cannon");
+                data.mover.Shoot();
 
             }
 
@@ -130,6 +137,7 @@ public class PlayerController : MonoBehaviour
             {
 
                 UnityEngine.Debug.Log("Firing Cannon");
+                data.mover.Shoot();
 
             }
 
