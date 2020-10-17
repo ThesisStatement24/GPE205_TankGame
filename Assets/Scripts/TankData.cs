@@ -10,7 +10,8 @@ public class TankData : MonoBehaviour
     public float damageDone;
     public float shootDelay; //Shots per second
     public float fireRate;
-    
+
+    public float health;
 
     public GameObject Bullet;
     public Transform Gun1;

@@ -41,8 +41,16 @@ public class Bullet : MonoBehaviour
         if (other.gameObject.tag == "Player2")
         {
  
-            Destroy(other.gameObject);
             Destroy(this.gameObject);
+            data.health -= 10;
+
+        }
+
+        if (other.gameObject.tag == "Player")
+        {
+
+            Destroy(this.gameObject);
+            data.health -= 10;
 
         }
 

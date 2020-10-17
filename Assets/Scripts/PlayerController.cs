@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Controller
 {
-    public TankData data;
+
     public enum ControlType { WASD, ArrowKeys, Controller1, Controller2 };
     public ControlType controlType;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        GameManager.instance.players.Add(this);
 
         
+    }
+
+    public void OnDestroy()
+    {
+        GameManager.instance.players.Remove(this);
     }
 
     // Update is called once per frame

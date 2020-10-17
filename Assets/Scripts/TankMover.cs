@@ -57,6 +57,25 @@ public class TankMover : MonoBehaviour
 
     }
 
+    public void MoveTo(Transform targetTransform)
+    {
+        RotateTowards(targetTransform);
+
+        cc.SimpleMove(transform.forward * Data.speed);
+    }
+
+    public void RotateTowards(Transform targetTransform)
+    {
+
+        Vector3 targetPosition = targetTransform.position;
+        targetPosition.y = transform.position.y;
+
+        Vector3 targetVector = targetTransform.position - transform.position;
+        Quaternion targetRotation = Quaternion.LookRotation(targetVector);
+        Quaternion newRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Data.rotateSpeed *Time.deltaTime);
+        transform.rotation = newRotation;
+    }
+
     public void Shoot()
     {
         

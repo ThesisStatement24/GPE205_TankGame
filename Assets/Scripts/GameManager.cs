@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
     public int score;
+    public List<Controller> players;
+    public List<Controller> enemies;
 
     private void Awake()
     {
