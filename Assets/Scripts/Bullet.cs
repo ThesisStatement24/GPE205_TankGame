@@ -42,7 +42,7 @@ public class Bullet : MonoBehaviour
         {
  
             Destroy(this.gameObject);
-            data.health -= 10;
+
 
         }
 
@@ -50,7 +50,7 @@ public class Bullet : MonoBehaviour
         {
 
             Destroy(this.gameObject);
-            data.health -= 10;
+
 
         }
 

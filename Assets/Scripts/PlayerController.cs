@@ -37,7 +37,7 @@ public class PlayerController : Controller
 
             }
 
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(KeyCode.D))
             {
                 //Rotate CounterClockwise (-)
                data.mover.Rotate(false);
@@ -50,7 +50,7 @@ public class PlayerController : Controller
                 directionToMove = -data.transform.forward;
             }
 
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.A))
             {
                 //Rotate Clockwise (+)
                 data.mover.Rotate(true);
@@ -78,7 +78,7 @@ public class PlayerController : Controller
 
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.RightArrow))
             {
                 //Rotate CounterClockwise (-)
                 data.mover.Rotate(false);
@@ -91,7 +91,7 @@ public class PlayerController : Controller
                 directionToMove = -data.transform.forward;
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.LeftArrow))
             {
                 //Rotate Clockwise (+)
                 data.mover.Rotate(true);
@@ -118,7 +118,7 @@ public class PlayerController : Controller
 
             }
 
-            if (Input.GetAxis("Horizontal") < -0.5)
+            if (Input.GetAxis("Horizontal") > -0.5)
             {
                 //Rotate CounterClockwise (-)
                 data.mover.Rotate(false);
@@ -131,7 +131,7 @@ public class PlayerController : Controller
                 directionToMove = -data.transform.forward;
             }
 
-            if (Input.GetAxis("Horizontal") > 0.5)
+            if (Input.GetAxis("Horizontal") < 0.5)
             {
                 //Rotate Clockwise (+)
                 data.mover.Rotate(true);
