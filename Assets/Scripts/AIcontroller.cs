@@ -155,7 +155,7 @@ public class AIcontroller : Controller
 
     public void DoPatrol()
     {
-
+        
         if (currentAvoidState == AIAvoidanceState.Normal)
         {
             //Turn towards our waypoint and Move forward

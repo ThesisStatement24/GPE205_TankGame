@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerController : Controller
 {
+   
 
     public enum ControlType { WASD, ArrowKeys, Controller1, Controller2 };
     public ControlType controlType;
@@ -17,10 +18,7 @@ public class PlayerController : Controller
         
     }
 
-    public void OnDestroy()
-    {
-        GameManager.instance.players.Remove(this);
-    }
+   
 
     // Update is called once per frame
     void Update()

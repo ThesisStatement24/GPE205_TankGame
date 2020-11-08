@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public List<Controller> players;
     public List<Controller> enemies;
 
+
+
     private void Awake()
     {
         
@@ -22,6 +24,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
 
         }
+
+        
 
     }
 

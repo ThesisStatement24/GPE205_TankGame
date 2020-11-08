@@ -10,7 +10,14 @@ public class AI_SimpleController : AIcontroller
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.instance.enemies.Add(this);
+
+
+    }
+
+    public void OnDestroy()
+    {
+        GameManager.instance.enemies.Remove(this);
     }
 
     // Update is called once per frame
