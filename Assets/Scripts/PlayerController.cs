@@ -10,6 +10,7 @@ public class PlayerController : Controller
     public enum ControlType { WASD, ArrowKeys, Controller1, Controller2 };
     public ControlType controlType;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,8 @@ public class PlayerController : Controller
     // Update is called once per frame
     void Update()
     {
+        
+
         Vector3 directionToMove = Vector3.zero;
 
         if(controlType == ControlType.WASD)

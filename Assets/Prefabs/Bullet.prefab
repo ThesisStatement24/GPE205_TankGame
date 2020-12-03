@@ -125,4 +125,6 @@ MonoBehaviour:
   bulletLife: 3
   tf: {fileID: 0}
   data: {fileID: 0}
-  bulletSpeed: 50
+  bulletSpeed: 10
+  Score: 0
+  yScore: {fileID: 0}

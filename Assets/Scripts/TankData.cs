@@ -13,11 +13,13 @@ public class TankData : MonoBehaviour
     public float fireRate;
 
     
+    
 
     public GameObject Bullet;
     public Transform Gun1;
 
     public TankMover mover;
+
 
     // Start is called before the first frame update
     void Start()
