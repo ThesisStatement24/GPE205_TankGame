@@ -44,13 +44,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
-        Score.text = "Score: " + PlayerPrefs.GetInt("Score");
-        HighScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore");
+        Score.text = "Score: " + UnityEngine.PlayerPrefs.GetInt("Score");
+        HighScore.text = "HighScore: " + UnityEngine.PlayerPrefs.GetInt("HighScore");
 
-        if(PlayerPrefs.GetInt("HighScore") <= PlayerPrefs.GetInt("Score"))
+        if(UnityEngine.PlayerPrefs.GetInt("HighScore") <= UnityEngine.PlayerPrefs.GetInt("Score"))
         {
 
-            PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
+            UnityEngine.PlayerPrefs.SetInt("HighScore", UnityEngine.PlayerPrefs.GetInt("Score"));
 
         }
         

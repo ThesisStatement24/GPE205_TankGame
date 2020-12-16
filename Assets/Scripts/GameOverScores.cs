@@ -21,13 +21,13 @@ public class GameOverScores : MonoBehaviour
     void Update()
     {
 
-        Score.text = "Your Score: " + PlayerPrefs.GetInt("Score");
-        HighScore.text = "HighScore: " + PlayerPrefs.GetInt("HighScore");
+        Score.text = "Your Score: " + UnityEngine.PlayerPrefs.GetInt("Score");
+        HighScore.text = "HighScore: " + UnityEngine.PlayerPrefs.GetInt("HighScore");
 
-        if (PlayerPrefs.GetInt("HighScore") <= PlayerPrefs.GetInt("Score"))
+        if (UnityEngine.PlayerPrefs.GetInt("HighScore") <= UnityEngine.PlayerPrefs.GetInt("Score"))
         {
 
-            PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score"));
+            UnityEngine.PlayerPrefs.SetInt("HighScore", UnityEngine.PlayerPrefs.GetInt("Score"));
 
         }
 

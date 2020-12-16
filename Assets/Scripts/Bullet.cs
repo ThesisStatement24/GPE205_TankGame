@@ -47,8 +47,8 @@ public class Bullet : MonoBehaviour
 
         if (other.gameObject.tag == "Player2")
         {
-            Score = PlayerPrefs.GetInt("Score") + 10;
-            PlayerPrefs.SetInt("Score", Score);
+            Score = UnityEngine.PlayerPrefs.GetInt("Score") + 10;
+            UnityEngine.PlayerPrefs.SetInt("Score", Score);
             Destroy(this.gameObject);
 
 

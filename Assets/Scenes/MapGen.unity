@@ -337,13 +337,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f553d706018d14d8fd174204147515, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 3
-  cols: 3
-  tileWidth: 100
-  tileHeight: 100
+  rows: 4
+  cols: 5
+  tileWidth: 50
+  tileHeight: 50
   useSeed: 1
   isMapOfTheDay: 1
-  seed: 800
+  seed: 600
   roomTemplates:
   - {fileID: 5173768706925319414, guid: 41d4243be8ad3a5409422171976de7ff, type: 3}
   - {fileID: 2491143202486361226, guid: 70e0253848daee44a90d624b6edc20b0, type: 3}

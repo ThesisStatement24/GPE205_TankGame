@@ -13,8 +13,15 @@ public class SceneSelector : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("Start Game!");
-        PlayerPrefs.SetInt("Score", 0);
+        UnityEngine.PlayerPrefs.SetInt("Score", 0);
         SceneManager.LoadScene(1);
+    }
+
+    public void StartMapGen()
+    {
+        Debug.Log("Start Game!");
+
+        SceneManager.LoadScene(3);
     }
 
     public void MainMenu()
